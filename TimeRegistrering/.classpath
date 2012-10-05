@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" output=".target" path="app"/>
-	<classpathentry kind="src" output=".target" path="test"/>
 	<classpathentry kind="lib" path="C:/play-2.0.3/repository/local/play/play_2.9.1/2.0.3/jars/play_2.9.1.jar"/>
 	<classpathentry kind="lib" path="C:/play-2.0.3/repository/local/play/templates_2.9.1/2.0.3/jars/templates_2.9.1.jar"/>
 	<classpathentry kind="lib" path="C:/play-2.0.3/repository/local/com.github.scala-incubator.io/scala-io-file_2.9.1/0.4.0/jars/scala-io-file_2.9.1.jar"/>
