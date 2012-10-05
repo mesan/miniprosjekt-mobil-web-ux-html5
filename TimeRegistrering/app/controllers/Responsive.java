@@ -17,5 +17,4 @@ public class Responsive extends Controller {
 	public static Result device() {
 		return ok(views.html.responsive.device.render(""));
 	}
-
 }
