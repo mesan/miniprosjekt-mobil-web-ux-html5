@@ -1,0 +1,44 @@
+@(message: String)
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+<meta name=apple-mobile-web-app-capable content=yes>
+<meta name=apple-mobile-web-app-status-bar-style content=black>
+<link rel='stylesheet' href='@routes.Assets.at("stylesheets/responsive.css")' type='text/css' />
+</head>
+<body>
+
+	<div id="top">
+		<div id="logo">
+			<img alt="logo" src="@routes.Assets.at("images/logo.png")" />
+		</div>
+	</div>
+	<div id="header">
+		<div id="menu">
+			<div class="menuButton menuButtonWidth">Gjør vi?</div>
+			<div class="menuButton menuButtonWidth">Er vi?</div>
+			<div class="menuButton menuButtonWidth">Jobb</div>
+			<div class="menuButton menuButtonWidth" id="hideMe">Kontakt</div>
+		</div>
+	</div>
+	<div id="news"></div>
+	<div id="fag">
+		<span style="font-size: 30px; font-style: bold;">FAGBLOGG
+			&gt;&gt;</span>
+	</div>
+	<div id="calendar"></div>
+
+
+	<script src="@routes.Assets.at("javascripts/categorizr.js")">
+		String type = categorizr.getType();
+	</script>
+
+</body>
+</html>

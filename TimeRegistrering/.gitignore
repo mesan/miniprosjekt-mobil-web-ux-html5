@@ -5,3 +5,4 @@ target
 tmp
 .history
 dist
+conf/evolutions/default/1.sql

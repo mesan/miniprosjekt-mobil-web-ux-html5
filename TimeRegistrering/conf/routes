@@ -10,6 +10,8 @@ PUT     /timereg/{id}               controllers.TimeReg.endreArbeid(id: Long)
 DELETE  /timereg/{id}               controllers.TimeReg.slettArbeid(id: Long)
 GET		/timereg/add				controllers.TimeReg.nyttArbeid()
 GET     /responsive                 controllers.Responsive.index()
+GET     /responsive/categorizr      controllers.Responsive.categorizr()
+GET     /responsive/device          controllers.Responsive.device()
 GET     /web		                controllers.Web.index()
 
 # Map static resources from the /public folder to the /assets URL path
