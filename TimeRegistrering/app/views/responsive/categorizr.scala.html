@@ -12,6 +12,18 @@
 <meta name=apple-mobile-web-app-capable content=yes>
 <meta name=apple-mobile-web-app-status-bar-style content=black>
 <link rel='stylesheet' href='@routes.Assets.at("stylesheets/responsive.css")' type='text/css' />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src='@routes.Assets.at("javascripts/categorizr.js")' >
+
+</script>
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+      //Dokumentet er klart javascript kode her forelopig..
+
+      console.log("javascript ok");
+    });
+</script>
+
 </head>
 <body>
 
@@ -25,7 +37,7 @@
 			<div class="menuButton menuButtonWidth">Gjør vi?</div>
 			<div class="menuButton menuButtonWidth">Er vi?</div>
 			<div class="menuButton menuButtonWidth">Jobb</div>
-			<div class="menuButton menuButtonWidth" id="hideMe">Kontakt</div>
+			<div class="menuButton menuButtonWidth" id="hideMe">Kontaktsdfdsfdsf</div>
 		</div>
 	</div>
 	<div id="news"></div>
@@ -35,10 +47,6 @@
 	</div>
 	<div id="calendar"></div>
 
-
-	<script src="@routes.Assets.at("javascripts/categorizr.js")">
-		String type = categorizr.getType();
-	</script>
-
 </body>
+
 </html>
