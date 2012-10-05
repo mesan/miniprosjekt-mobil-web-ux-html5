@@ -10,4 +10,12 @@ public class Responsive extends Controller {
 		return ok(views.html.responsive.index.render(""));
 	}
 
+	public static Result categorizr() {
+		return ok(views.html.responsive.categorizr.render(""));
+	}
+
+	public static Result device() {
+		return ok(views.html.responsive.device.render(""));
+	}
+
 }
