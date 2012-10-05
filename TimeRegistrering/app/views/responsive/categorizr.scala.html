@@ -18,11 +18,13 @@
 <script type="text/javascript" src='@routes.Assets.at("javascripts/categorizrplayground/a-cat.js")' ></script>
 <script type="text/javascript" src='@routes.Assets.at("javascripts/categorizr.js")' ></script>
 <script type="text/javascript">
-  jQuery(document).ready(function() {
-      //Dokumentet er klart javascript kode her forelopig..
+	jQuery(document).ready(function() {
+		//Dokumentet er klart javascript kode her forelopig..
+
+		alert("You are visiting this page from a " + categorizr());
     aMain();
     kMain();
-    });
+	});
 </script>
 
 </head>
@@ -30,12 +32,12 @@
 
 	<div id="top">
 		<div id="logo">
-			<img alt="logo" src='@routes.Assets.at("images/logo.png")' />
+			<img alt="logo" src="@routes.Assets.at("images/logo.png")" />
 		</div>
 	</div>
 	<div id="header">
 		<div id="menu">
-			<div class="menuButton menuButtonWidth">GjÃ¸r vi?</div>
+			<div class="menuButton menuButtonWidth">Gjør vi?</div>
 			<div class="menuButton menuButtonWidth">Er vi?</div>
 			<div class="menuButton menuButtonWidth">Jobb</div>
 			<div class="menuButton menuButtonWidth" id="hideMe">Kontaktsdfdsfdsf</div>
