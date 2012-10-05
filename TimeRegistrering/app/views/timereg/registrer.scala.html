@@ -1,0 +1,15 @@
+@main("Timeregisteret") {
+    <div ng-controller="RegistrerTimerCtrl">
+    	<form>
+    		Ansattnummer <input type="text" name="ansattnr" autofocus required ng-model="ansattnr"/><br />
+    		Dato <input type="date" name="dato" required ng-model="dato"/><br />
+    		Arbeid <input type="text" name="arbeid" required ng-model="arbeid"/><br />
+    		Antall timer <input type="text" name="timer" min="1" max="24" ng-model="timer"/><br />
+    		Overtid <input type="checkbox" name="overtid" required ng-model="overtid"/><br />
+    		Kommentar <textarea name="kommentar" rows="5" cols="40" ng-model="kommentar"></textarea>
+    		
+    		
+    	</form>
+    	<button name="add" ng-click="printstatus()">Registrer timer</button>
+    </div>
+}
