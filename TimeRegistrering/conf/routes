@@ -5,9 +5,10 @@
 # Home page
 GET     /                           controllers.Application.index()
 GET     /timereg                    controllers.TimeReg.index()
-POST    /timereg                  	controllers.TimeReg.nyttArbeid()
+POST    /timereg                  	controllers.TimeReg.opprettArbeid()
 PUT     /timereg/{id}               controllers.TimeReg.endreArbeid(id: Long)
 DELETE  /timereg/{id}               controllers.TimeReg.slettArbeid(id: Long)
+GET		/timereg/add				controllers.TimeReg.nyttArbeid()
 GET     /responsive                 controllers.Responsive.index()
 GET     /web		                controllers.Web.index()
 
