@@ -79,9 +79,12 @@ html,body {
 	width: 25%;
 }
 
+#samsungGalaxyS3 {
+	display:none;
+}
 
-    /* Large desktop */
-@media only screen and (min-width: 1200px) {
+/* Large desktop */
+@media only screen and (min-width: 1100px) {
 	
 }
      
@@ -102,6 +105,19 @@ html,body {
 	}
 	#hideMe {
 		display:none;
+	}
+}
+
+
+
+/* Samsung Galaxy S3 */
+@media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5) {
+	   
+	#hideMe {
+		display:none;
+	}
+	#samsungGalaxyS3 {
+		display:block;
 	}
 }
  
