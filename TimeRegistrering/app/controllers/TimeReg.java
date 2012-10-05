@@ -16,11 +16,12 @@ import play.mvc.Result;
 public class TimeReg extends Controller {
 
 	public static Result index() {
+		
 		return ok(views.html.timereg.index.render(Arbeid.find.all()));
 	}
-
+	
 	@BodyParser.Of(BodyParser.Json.class)
-	public static Result nyttArbeid() {
+	public static Result opprettArbeid() {
 		// Ta imot data
 		//DynamicForm dynamicForm = form().bindFromRequest();
 		//String input = dynamicForm.get("input_navn");
@@ -38,6 +39,10 @@ public class TimeReg extends Controller {
 			result.put("message", "Hello " + input);
 			return ok(result);
 		}
+	}
+	
+	public static Result nyttArbeid() {
+		return ok(views.html.timereg.registrer.render());
 	}
 
 	@BodyParser.Of(BodyParser.Json.class)
@@ -87,6 +92,7 @@ public class TimeReg extends Controller {
 			return ok(result);
 		}
 	}
+	
 	
 	
 }
