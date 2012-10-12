@@ -5,44 +5,95 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>HTLM5/CSS3</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
 <meta name=apple-mobile-web-app-capable content=yes>
 <meta name=apple-mobile-web-app-status-bar-style content=black>
 <link rel='stylesheet' href='@routes.Assets.at("stylesheets/web.css")' type='text/css' />
+
 </head>
 <body>
-
-	<div id="top">
+	
+	 
 		<div id="logo">
-			<img alt="logo" src="@routes.Assets.at("images/logo.png")" />
+			<img alt="logo" src="@routes.Assets.at("images/logo.png")">
 		</div>
-	</div>
+	
 	<div id="header">
 		<div id="menu">
-			<div class="menuButton menuButtonWidth">GjÃ¸r vi?</div>
+			<div class="menuButton menuButtonWidth">Gjør vi?</div>
 			<div class="menuButton menuButtonWidth">Er vi?</div>
 			<div class="menuButton menuButtonWidth">Jobb</div>
 			<div class="menuButton menuButtonWidth" id="hideMe">Kontakt</div>
 		</div>
 	</div>
-	<div id="news"></div>
-	<div id="fag">
-		<span style="font-size: 30px; font-style: bold;">FAGBLOGG
-			&gt;&gt;</span>
+
+	
+	<h2>Transformation</h2>
+	<div class="boks">
+		<img id="transition" alt="logo" src="@routes.Assets.at("images/firefox.png")">
+		<br />
+		
+		<br />
+		Klikk i tekstboksen: <input type="text" id="mytextbox" />
 	</div>
 	
-	<div id="calendar">
 	
-	<div id="transition_boks">
-		<img id="transition" alt="logo" src="@routes.Assets.at("images/firefox.png")" />
+<<<<<<< HEAD
+	<!--  <div id="transition_boks" class="skygge hover">-->
+	
+	<div id="transition">
+		<div id="firefox" class="rullerende" ><img alt="logo" src="@routes.Assets.at("images/firefox.png")" /></div>
+		 <div id="ease" class="test_box"><p>HALLO</p></div>
 	</div>
+	
+ 
+
+</div>
+	
 	</div>
+=======
+	<h2>My First Animation</h2>
+	<div class="boks">
+	    <div id="myanimation"></div>
+>>>>>>> cb0bf8ab7b58fa69774cc46c9746f915adb20412
 	
 	</div>
 
+	<h2>Canvas</h2>
+	
+
+<canvas id="myCanvas"; width="200" height="300" >
+Din browser støtter ikke canvas</canvas>
+
+
+<script type="text/javascript">
+  var canvas = document.getElementById('myCanvas');
+  if (canvas.getContext){
+
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+
+    // Draw shapes
+    ctx.beginPath();
+    ctx.arc(75,75,50,0,Math.PI*2,true); 
+    ctx.moveTo(110,75);
+    ctx.arc(75,75,35,0,Math.PI,false);   
+    ctx.moveTo(65,65);
+    ctx.arc(60,65,5,0,Math.PI*2,true); 
+    ctx.moveTo(95,65);
+    ctx.arc(90,65,5,0,Math.PI*2,true);  
+    ctx.stroke();
+
+<<<<<<< HEAD
 
 </body>
 </html>
+=======
+  } 
+	 </script>
+	 
+</body></html>
+>>>>>>> cb0bf8ab7b58fa69774cc46c9746f915adb20412
