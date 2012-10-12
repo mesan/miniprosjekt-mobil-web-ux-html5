@@ -13,11 +13,27 @@ html,body {
 }
 
 #news {
-	height: 250px;
+	height: 50px;
 	width: 100%;
 	padding: 0px;
 	margin: 0px;
 	background-color: #cc00cc;
+}
+
+#todo {
+	height: 50px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	background-color: #92cc40;
+}
+
+#tull {
+	height: 50px;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	background-color: rgba(255, 250, 39, 0.59);
 }
 
 #fag {
@@ -83,19 +99,27 @@ html,body {
 	display:none;
 }
 
+#htcSensation710 {
+	display:none;
+}
+
+#iPhone4S {
+    display: none;
+}
+
 /* Large desktop */
 @media only screen and (min-width: 1100px) {
-	
+
 }
-     
+
 /* Portrait tablet to landscape and desktop */
 @media only screen and (min-width: 768px) and (max-width: 979px) {
-	
+
 }
- 
+
 /* Landscape phone to portrait tablet */
 @media only screen and (max-width: 767px) {
-	
+
 }
 
 /* Phone */
@@ -111,8 +135,8 @@ html,body {
 
 
 /* Samsung Galaxy S3 */
-@media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5) {
-	   
+@media only screen and (min-device-width: 721px) and (-webkit-min-device-pixel-ratio: 1.5) {
+
 	#hideMe {
 		display:none;
 	}
@@ -120,4 +144,26 @@ html,body {
 		display:block;
 	}
 }
- 
+
+
+/* Htc Sensation Z710*/
+@media only screen and (min-device-width: 540px) and (-webkit-min-device-pixel-ratio: 1.5) {
+
+	#hideMe {
+		display:none;
+	}
+	#htcSensation710 {
+		display:block;
+	}
+}
+
+/* iPhone 4S*/
+@media only screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 1.5) {
+
+	#hideMe {
+		display:none;
+	}
+	#iPhone4S {
+		display:block;
+	}
+}
