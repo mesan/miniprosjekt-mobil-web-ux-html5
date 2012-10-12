@@ -76,13 +76,6 @@ html,body {
 }
 
 
-#transition{
-   -webkit-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
-   -moz-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
-    -ms-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
-     -o-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
-        transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000); /* ease-in */
-}
 
 .menuButtonWidth {
 	width: 25%;
@@ -118,6 +111,7 @@ html,body {
 /*WEB
 /*---------------------------------------------*/
 
+
 #transition_boks{
     position:relative;
     width:530px;
@@ -127,13 +121,13 @@ html,body {
     padding:10px;
 }
 
-    #transition 
-    {
-  	 	-webkit-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-		-moz-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-		-o-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-		transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-  }
+#transition 
+{
+	-webkit-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+    -moz-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+	-o-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+	transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+}
   
 
   
@@ -151,3 +145,48 @@ html,body {
 	margin-left:420px;
  	
   }
+
+#animationboks{
+	position:relative;
+    width:530px;
+    height:530px;
+    margin:0 auto 10px;
+    border:1px #aaa solid;
+    padding:10px;
+	
+}
+
+
+#myanimation{
+   width:100px;
+   height:100px;
+   background:red;
+   animation:myfirst 5s;
+   -moz-animation:myfirst 5s; /* Firefox */
+   -webkit-animation:myfirst 5s; /* Safari and Chrome */
+   -o-animation:myfirst 5s; /* Opera */
+}
+
+@keyframes myfirst
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+from {background:red;}
+to {background:yellow;}
+}
