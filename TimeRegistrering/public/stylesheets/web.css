@@ -106,31 +106,64 @@ html,body {
 }
 
 
-/*WEB
-/*---------------------------------------------*/
+/*TRANSITION
+/*----------------------------------*/
 
-#transition_boks{
+.rullerende img
+{
+	width:60px;
+    height:60px;
+}
+.rullerende 
+{
+	position:relative;
+	width:60px;
+    height:60px;
+    margin-bottom: 40px;
+}
+
+#transition 
+{
     position:relative;
     width:530px;
     height:530px;
     margin:0 auto 10px;
     border:1px #aaa solid;
     padding:10px;
-}
-
-    #transition 
-    {
-  	 	-webkit-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-		-moz-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-		-o-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-		transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+  }
+  .test_box {
+    font-size:12px;
+    position:relative;
+    width:60px;
+    height:60px;
+    margin-bottom:10px;
+    background-color:#eee;
+  }
+  .test_box p
+   {
+    text-align:center;
+    padding-top:4px;
+  }
+ #ease.test_box
+  {
+    -webkit-transition: all 4s ease;
+	-moz-transition: all 4s ease;
+	-o-transition: all 4s ease;
+	transition: all 4s ease;    
+	border:1px #f00 solid;
   }
   
+   #firefox.rullerende 
+   {
+    -webkit-transition: all 4s ease;
+	-moz-transition: all 4s ease;
+	-o-transition: all 4s ease;
+	transition: all 4s ease;   
+   }
 
-  
-  #transition:hover,
-  #transition_boks.hover_effect 
-  {
+ #transition:hover .test_box, 
+ #transition.hover_effect .test_box
+ {
     -webkit-border-radius:30px;
     -moz-border-radius:30px;
     border-radius:30px;
@@ -140,5 +173,19 @@ html,body {
 	-ms-transform: rotate(720deg);
 	transform: rotate(720deg);    
 	margin-left:420px;
- 	
+    background-color:#fff;
   }
+    #transition:hover .rullerende,
+    #transition.hover_effect .rullerende
+ {
+
+    -webkit-transform: rotate(1440deg); /*hvor mange omdreininger*/
+	-moz-transform: rotate(1440deg);
+	-o-transform: rotate(1440deg);
+	-ms-transform: rotate(1440deg);
+	transform: rotate(1440deg);    
+	margin-left:420px;       /*hvor mye flyttes bildet for hver rulling*/
+  }
+
+  
+  
