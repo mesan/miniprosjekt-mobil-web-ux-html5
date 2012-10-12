@@ -123,10 +123,10 @@ h2{
     border:1px #aaa solid;
     padding:10px;
     background: #9c3;
-    -webkit-transition: background 1s ease;
-    -moz-transition: background 1s ease;
-    -o-transition: background 1s ease;
-    transition: background 1s ease;
+    -webkit-transition: background 1s ease-out;
+    -moz-transition: background 1s linear;
+    -o-transition: background 1s ease-out;
+    transition: background 1s ease-out;
 }
 .boks:hover
 {
