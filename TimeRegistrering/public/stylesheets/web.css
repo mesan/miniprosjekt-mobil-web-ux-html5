@@ -75,6 +75,15 @@ html,body {
 	border-left: 1px solid #333333;
 }
 
+
+#transition{
+   -webkit-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
+   -moz-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
+    -ms-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
+     -o-transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000);
+        transition-timing-function: cubic-bezier(0.420, 0.000, 1.000, 1.000); /* ease-in */
+}
+
 .menuButtonWidth {
 	width: 25%;
 }
