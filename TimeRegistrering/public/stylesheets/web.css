@@ -111,6 +111,9 @@ html,body {
 /*WEB
 /*---------------------------------------------*/
 
+h2{
+	text-align:center;
+}
 
 .boks{
     position:relative;
@@ -119,6 +122,15 @@ html,body {
     margin:0 auto 10px;
     border:1px #aaa solid;
     padding:10px;
+    background: #9c3;
+    -webkit-transition: background 1s ease;
+    -moz-transition: background 1s ease;
+    -o-transition: background 1s ease;
+    transition: background 1s ease;
+}
+.boks:hover
+{
+   background: #690;  
 }
 
 #transition 
