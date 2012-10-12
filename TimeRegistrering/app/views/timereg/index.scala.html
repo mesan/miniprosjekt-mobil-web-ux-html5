@@ -2,13 +2,21 @@
 
 @main("Timeregisteret") {
     
-    <h2>Logg for timeregistreringer (@arbeidListe.size stk)</h2>
-	<table>
+    <div ng-controller="ListTimeRegCtrl">
+    
+    <h2>Logg for timeregistreringer ({{registrerteTimer.length}} stk)</h2>
+	<table >
 		<tr><th>Dato</th><th>Ansatt#</th><th>Type arbeid</th><th>Antall timer</th></tr>
 		
-		@for(arbeid <- arbeidListe) {
-			<tr><td>@arbeid.dato</td><td>@arbeid.ansattNr</td><td>@arbeid.arbeid</td><td>@arbeid.timer</td></tr>					
-		}
-    </table>
+		<tr ng-repeat="arbeid in registrerteTimer">
+			<td>{{arbeid.dato}}</td>
+			<td>{{arbeid.ansattnr}}</td>
+			<td>{{arbeid.arbeid}}</td>
+			<td>{{arbeid.timer}}</td></tr>
+		</tr>
+    </table>   
     
+    <p>{{test}} - {{test2}} - {{1 + 2}}</p>
+    
+    </div>
 }

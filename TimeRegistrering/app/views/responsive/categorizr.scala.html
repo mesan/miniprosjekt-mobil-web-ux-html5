@@ -11,7 +11,22 @@
 
 <meta name=apple-mobile-web-app-capable content=yes>
 <meta name=apple-mobile-web-app-status-bar-style content=black>
-<link rel='stylesheet' href='@routes.Assets.at("stylesheets/web.css")' type='text/css' />
+<link rel='stylesheet' href='@routes.Assets.at("stylesheets/responsive.css")' type='text/css' />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src='@routes.Assets.at("javascripts/categorizr.js")' ></script>
+<script type="text/javascript" src='@routes.Assets.at("javascripts/categorizrplayground/k-cat.js")' ></script>
+<script type="text/javascript" src='@routes.Assets.at("javascripts/categorizrplayground/a-cat.js")' ></script>
+<script type="text/javascript" src='@routes.Assets.at("javascripts/categorizr.js")' ></script>
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		//Dokumentet er klart javascript kode her forelopig..
+
+		alert("You are visiting this page from a " + categorizr());
+    aMain();
+    kMain();
+	});
+</script>
+
 </head>
 <body>
 
@@ -25,32 +40,16 @@
 			<div class="menuButton menuButtonWidth">Gjør vi?</div>
 			<div class="menuButton menuButtonWidth">Er vi?</div>
 			<div class="menuButton menuButtonWidth">Jobb</div>
-			<div class="menuButton menuButtonWidth" id="hideMe">Kontakt</div>
+			<div class="menuButton menuButtonWidth" id="hideMe">Kontaktsdfdsfdsf</div>
 		</div>
 	</div>
 	<div id="news"></div>
-	<div id="transition-boks">
-	<img id="transition" alt="cubic" src="@routes.Assets.at("images/Blender-mesh-cube.png")" />
-	</div>
 	<div id="fag">
 		<span style="font-size: 30px; font-style: bold;">FAGBLOGG
 			&gt;&gt;</span>
 	</div>
-
 	<div id="calendar"></div>
-	
-
-	
-	<div id="calendar">
-	
-	<div id="transition_boks">
-		<img id="transition" alt="logo" src="@routes.Assets.at("images/firefox.png")" />
-	</div>
-	</div>
-	
-	
-
-
 
 </body>
+
 </html>
