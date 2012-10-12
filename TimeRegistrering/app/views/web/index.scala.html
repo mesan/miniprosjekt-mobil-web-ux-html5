@@ -14,12 +14,12 @@
 <link rel='stylesheet' href='@routes.Assets.at("stylesheets/web.css")' type='text/css' />
 </head>
 <body>
-
-	<div id="top">
+	
+	 
 		<div id="logo">
-			<img alt="logo" src="@routes.Assets.at("images/logo.png")" />
+			<img alt="logo" src="@routes.Assets.at("images/logo.png")">
 		</div>
-	</div>
+	
 	<div id="header">
 		<div id="menu">
 			<div class="menuButton menuButtonWidth">Gjør vi?</div>
@@ -33,6 +33,10 @@
 	<h2>Transformation</h2>
 	<div class="boks">
 		<img id="transition" alt="logo" src="@routes.Assets.at("images/firefox.png")">
+		<br />
+		
+		<br />
+		Klikk i tekstboksen: <input type="text" id="mytextbox" />
 	</div>
 	
 	
@@ -42,7 +46,22 @@
 	
 	</div>
 
+	<h2>Canvas</h2>
 	
 
-</body>
-</html>
+<canvas id="myCanvas"; width="200" height="100" >
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+<script type="text/javascript">
+	   var c=document.getElementById("myCanvas");
+       var ctx=c.getContext("2d");
+       var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+       grd.addColorStop(0,"red");
+       grd.addColorStop(1,"white");
+       ctx.fillStyle=grd;
+       ctx.fillRect(0,0,150,80);
+	 	
+	 </script>
+	 
+</body></html>
