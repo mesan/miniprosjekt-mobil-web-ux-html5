@@ -2,7 +2,7 @@
 
 @main("Timeregisteret") {
     
-    <div ng-controller="ListTimeRegCtrl">
+    <div ng-controller="TimeregCtrl">
     
     <h2>Logg for timeregistreringer ({{registrerteTimer.length}} stk)</h2>
 	<table >
@@ -14,9 +14,6 @@
 			<td>{{arbeid.arbeid}}</td>
 			<td>{{arbeid.timer}}</td></tr>
 		</tr>
-    </table>   
-    
-    <p>{{test}} - {{test2}} - {{1 + 2}}</p>
-    
+    </table>   	
     </div>
 }
