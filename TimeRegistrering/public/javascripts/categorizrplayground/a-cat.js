@@ -7,10 +7,7 @@ aMain = function() {
 
   //categorizr('desktop', 'mobile');
 
-  console.log(categorizr());
-
   var erMobil = function() {
-    console.log("ouehufehu");
     if(categorizr() == 'mobile'){
       return true;
     }else {
