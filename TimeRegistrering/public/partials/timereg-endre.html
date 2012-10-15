@@ -1,0 +1,21 @@
+<form id="arbeidForm">	
+	<label for="ansattNr">Ansattnummer</label>
+	<input type="text" id="ansattNr" name="ansattNr" autofocus ng-model="ansattNr" />
+
+	<label for="dato">Dato</label>
+	<input type="date" id="dato" name="dato" ng-model="dato" />
+	
+	<label for="arbeid">Arbeid</label>
+	<input type="text" id="arbeid" name="arbeid" ng-model="arbeid" />
+	
+	<label for="timer">Timer</label>
+	<input type="text" name="timer" min="1" max="24" ng-model="timer" />
+	
+	<label for="overtid">Overtid</label>
+	<input type="checkbox" name="overtid" ng-model="overtid" />
+	
+	<label for="kommentar">Kommentar</label>
+	<textarea name="kommentar" rows="5" cols="40" ng-model="kommentar"></textarea>
+</form>
+
+<button name="add" ng-click="oppdaterArbeid()">Oppdater arbeid</button>

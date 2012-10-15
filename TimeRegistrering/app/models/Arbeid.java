@@ -20,13 +20,23 @@ public class Arbeid extends Model {
 	public String arbeid;
 	public double timer;
 	public boolean overtid;
+	public String kommentar;
+	
+	public void oppdater(Arbeid arbeid) {
+		this.dato = arbeid.getDato();
+		this.arbeid = arbeid.getArbeid();
+		this.timer = arbeid.getTimer();
+		this.overtid = arbeid.getOvertid();
+		this.kommentar = arbeid.getKommentar();
+	}
 
-	public Arbeid(long ansattNr, Date dato, String arbeid, double timer, boolean overtid) {
+	public Arbeid(long ansattNr, Date dato, String arbeid, double timer, boolean overtid, String kommentar) {
 		this.ansattNr = ansattNr;
 		this.dato = dato;
 		this.arbeid = arbeid;
 		this.timer = timer;
 		this.overtid = overtid;
+		this.kommentar = kommentar;
 	}
 
 	public long getAnsattNr() {
@@ -61,12 +71,20 @@ public class Arbeid extends Model {
 		this.timer = timer;
 	}
 
-	public boolean isOvertid() {
+	public boolean getOvertid() {
 		return overtid;
 	}
 
 	public void setOvertid(boolean overtid) {
 		this.overtid = overtid;
+	}
+	
+	public String getKommentar() {
+		return kommentar;
+	}
+	
+	public void setKommentar(String kommentar) {
+		this.kommentar = kommentar;
 	}
 
 	public static Finder<Long, Arbeid> find = new Finder<Long, Arbeid>(Long.class, Arbeid.class);

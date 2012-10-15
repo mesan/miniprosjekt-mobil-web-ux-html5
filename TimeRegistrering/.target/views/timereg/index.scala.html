@@ -1,14 +1,5 @@
 @(arbeidListe: List[Arbeid])
 
 @main("Timeregisteret") {
-    
-    <h2>Logg for timeregistreringer (@arbeidListe.size stk)</h2>
-	<table>
-		<tr><th>Dato</th><th>Ansatt#</th><th>Type arbeid</th><th>Antall timer</th></tr>
-		
-		@for(arbeid <- arbeidListe) {
-			<tr><td>@arbeid.dato</td><td>@arbeid.ansattNr</td><td>@arbeid.arbeid</td><td>@arbeid.timer</td></tr>					
-		}
-    </table>
-    
+    <div ng-view></div>
 }

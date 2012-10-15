@@ -9,6 +9,7 @@ create table arbeid (
   arbeid                    varchar(255),
   timer                     double,
   overtid                   boolean,
+  kommentar                 varchar(255),
   constraint pk_arbeid primary key (ansatt_nr))
 ;
 

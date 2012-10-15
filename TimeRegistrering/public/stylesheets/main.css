@@ -1,0 +1,81 @@
+html, body {
+	font-family: Arial, Helvetica, Verdana;
+	height: 100%;
+	margin: 0;
+}
+
+#navigationBar {
+	background: #db3029; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiMzAyOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4NjAzMDMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #db3029 0%, #860303 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#db3029), color-stop(100%,#860303)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #db3029 0%,#860303 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #db3029 0%,#860303 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #db3029 0%,#860303 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #db3029 0%,#860303 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db3029', endColorstr='#860303',GradientType=0 ); /* IE6-8 */
+	
+	line-height: 48px;
+	height:48px;
+}
+
+#navigationBar a {
+	text-decoration: none;	
+}
+
+#navigationBar h1 {
+	color:#ffffff;
+	font-size: 24px;
+	margin:0;
+	text-align: center;
+	text-shadow: 0 -1px #000;
+}
+
+#innhold {
+	padding: 10px;
+	position: relative;
+}
+
+#timeregistreringerTabell {
+	width:100%;
+	margin-bottom: 20px;
+}
+
+#timeregistreringerTabell th {
+	text-align: left;
+}
+
+#arbeidForm {
+	
+}
+
+#arbeidForm label {
+	display:block;
+}
+
+#arbeidForm input {
+	padding: 4px 0; 
+}
+
+#arbeidForm input, #arbeidForm textarea {
+	border: 1px solid #cccccc;
+	margin-bottom: 10px;
+	
+	-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+#handlingsPanel {
+	background-color:#333333;	
+	bottom:0;
+	color:#000000;
+	display:none;
+	height:100px;
+	left:0;
+	position: absolute;
+	width: 100%;
+}

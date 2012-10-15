@@ -4,15 +4,20 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-GET     /timereg                    controllers.TimeReg.index()
-POST    /timereg                  	controllers.TimeReg.opprettArbeid()
-PUT     /timereg/{id}               controllers.TimeReg.endreArbeid(id: Long)
-DELETE  /timereg/{id}               controllers.TimeReg.slettArbeid(id: Long)
-GET		/timereg/add				controllers.TimeReg.nyttArbeid()
 GET     /responsive                 controllers.Responsive.index()
 GET     /responsive/categorizr      controllers.Responsive.categorizr()
 GET     /responsive/device          controllers.Responsive.device()
 GET     /web		                controllers.Web.index()
 
-# Map static resources from the /public folder to the /assets URL path
+# Map static resources from the /pu,blic folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+#Timereg
+GET     /timereg                    controllers.TimeReg.index()
+GET		/timereg/new				controllers.TimeReg.newWork()
+GET 	/timereg/:id				controllers.TimeReg.show(id: Long)
+GET 	/timereg/:id/edit			controllers.TimeReg.edit(id: Long)
+POST    /timereg                  	controllers.TimeReg.create()
+PUT     /timereg/:id 	            controllers.TimeReg.update(id: Long)
+DELETE  /timereg/id	                controllers.TimeReg.delete(id: Long)
+

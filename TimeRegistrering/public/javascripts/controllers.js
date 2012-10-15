@@ -1,43 +1,105 @@
-function ListTimeRegCtrl($scope) {
-	$scope.registrerteTimer = [
-			{"id" : "1",
-			"ansattnr" : "123",
-			"dato" : "asd",
-			"arbeid" : "arbeid 1",
-			"timer" : "7,5",
-			"overtid" : "false"},
-			{"id" : "2",
-				"ansattnr" : "123",
-				"dato" : "asd",
-				"arbeid" : "arbeid 2",
-				"timer" : "3,5",
-				"overtid" : "true"},
-			{"id" : "3",
-				"ansattnr" : "123",
-				"dato" : "asd",
-				"arbeid" : "arbeid 3",
-				"timer" : "7,5",
-				"overtid" : "false"}
-	];
-		
-	$scope.test = "Hello world!";
-	$scope.test2 = "asdasd";
+/*
+ * Index action. 
+ * 
+ * GET: /timereg
+ */
+function TimeregListeCtrl($scope, $http) {
+	
+    $http({method: 'GET', url: '/timereg'}).
+    success(function(data, status, headers, config) {
+    	$scope.registrerteTimer = data;
+    }).
+    error(function(data, status, headers, config) {
+    	alert("Feil i index.");
+    });
 };
 
 
-function RegistrerTimerCtrl($scope) {
-	$scope.ansattnr = "";
-	$scope.dato = "";
-	$scope.arbeid = "";
-	$scope.timer = "";
-	$scope.overtid = "";
-	$scope.kommentar = "";
-	
-	$scope.setAnsattnr = function(new_ansattnr) {
-		this.ansattnr = new_ansattnr;
-    }
-	
-	$scope.printstatus = function() {
-		alert("Ansatt: " + this.ansattnr + " Dato: " + this.dato + " Arbeid: " + this.arbeid + " Timer: " + this.timer + " Overtid: " + this.overtid + " Kommentar: " + this.kommentar);
+/*
+ * New action.
+ * 
+ * POST: /timereg
+ */
+function TimeregNyCtrl($scope, $http) {
+			
+	$scope.nyttArbeid = function() {
+		var arbeid = {
+			ansattNr: $scope.ansattNr,
+			dato: $scope.dato,
+			arbeid: $scope.arbeid,
+			timer: $scope.timer,
+			overtid: $scope.overtid,
+			kommentar: $scope.kommentar
+		};
+		
+		$http.post('/timereg', arbeid).
+		success(function(data, status, headers, config) {
+			window.location = '#/timereg';
+		}). 
+		error(function(data, status, headers, config) {
+			alert("Feil i new.");
+		});
 	}
 };
+
+
+/*
+ * Show action.
+ * 
+ * GET: /timereg/:id
+ */
+function TimeregDetaljeCtrl($scope, $http, $routeParams) {
+	$http.get('/timereg/' + $routeParams.id)
+	.success(function(data, status, headers, config) {
+		$scope.ansattNr = data.ansattNr;
+		$scope.dato = data.dato;
+		$scope.arbeid = data.arbeid;
+		$scope.timer = data.timer;
+		$scope.overtid = data.overtid;
+		$scope.kommentar = data.kommentar;
+	})
+	.error(function(data, status, headers, config) {
+		alert("Feil i delete");
+	});
+}
+
+
+/*
+ * Edit action.
+ * 
+ * GET: /timereg/:id/edit
+ */
+function TimeregEndreCtrl($scope, $http, $routeParams) {
+	$http.get('/timereg/' + $routeParams.id + '/edit')
+	.success(function(data, status, headers, config) {
+		$scope.ansattNr = data.ansattNr;
+		$scope.dato = data.dato;
+		$scope.arbeid = data.arbeid;
+		$scope.timer = data.timer;
+		$scope.overtid = data.overtid;
+		$scope.kommentar = data.kommentar;
+	})
+	.error(function(data, status, headers, config) {
+		console.log(data);
+		alert("Feil i edit");
+	});
+	
+	$scope.oppdaterArbeid = function() {
+		var arbeid = {
+				ansattNr: $scope.ansattNr,
+				dato: $scope.dato,
+				arbeid: $scope.arbeid,
+				timer: $scope.timer,
+				overtid: $scope.overtid,
+				kommentar: $scope.kommentar
+			};
+			
+			$http.put('/timereg/' + $routeParams.id, arbeid).
+			success(function(data, status, headers, config) {
+				window.location = '#/timereg/' + $routeParams.id;
+ 			}). 
+			error(function(data, status, headers, config) {
+				alert("Feil");
+			});
+	}
+}

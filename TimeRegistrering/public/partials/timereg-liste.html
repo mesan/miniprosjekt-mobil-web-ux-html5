@@ -1,0 +1,20 @@
+
+<h2>Dine timeregistreringer ({{registrerteTimer.length}} stk)</h2>
+
+<table id="timeregistreringerTabell">
+	<tr>
+		<th>Dato</th>
+		<th>Type arbeid</th>
+		<th>Antall timer</th>
+		<th>Valg</th>
+	</tr>
+
+	<tr ng-repeat="arbeid in registrerteTimer">
+		<td>{{arbeid.dato}}</td>
+		<td>{{arbeid.arbeid}}</td>
+		<td>{{arbeid.timer}}</td>
+		<td><a href="#/timereg/{{arbeid.ansattNr}}">Vis</a> | <a href="#/timereg/{{arbeid.ansattNr}}/edit">Rediger</a></td>
+	</tr>
+</table>
+
+<a href="#/timereg/new">Registrer arbeid</a>

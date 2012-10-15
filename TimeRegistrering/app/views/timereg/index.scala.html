@@ -1,22 +1,5 @@
 @(arbeidListe: List[Arbeid])
 
 @main("Timeregisteret") {
-    
-    <div ng-controller="ListTimeRegCtrl">
-    
-    <h2>Logg for timeregistreringer ({{registrerteTimer.length}} stk)</h2>
-	<table >
-		<tr><th>Dato</th><th>Ansatt#</th><th>Type arbeid</th><th>Antall timer</th></tr>
-		
-		<tr ng-repeat="arbeid in registrerteTimer">
-			<td>{{arbeid.dato}}</td>
-			<td>{{arbeid.ansattnr}}</td>
-			<td>{{arbeid.arbeid}}</td>
-			<td>{{arbeid.timer}}</td></tr>
-		</tr>
-    </table>   
-    
-    <p>{{test}} - {{test2}} - {{1 + 2}}</p>
-    
-    </div>
+    <div ng-view></div>
 }
