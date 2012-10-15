@@ -42,6 +42,12 @@ function TimeregNyCtrl($scope, $http) {
 	}
 };
 
+timereg.controller('TimeregCtrl', function TimeregCtrl($scope, timeregStorage) {
+var registrerteTimer = $scope.registrerteTimer = timeregStorage.get();
+	$scope.leggTilTimereg = function(user) {
+		timeregStorage.put(user);
+	};
+});
 
 /*
  * Show action.

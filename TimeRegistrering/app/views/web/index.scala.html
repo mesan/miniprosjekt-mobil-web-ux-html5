@@ -5,44 +5,91 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>HTLM5/CSS3</title>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
 <meta name=apple-mobile-web-app-capable content=yes>
 <meta name=apple-mobile-web-app-status-bar-style content=black>
 <link rel='stylesheet' href='@routes.Assets.at("stylesheets/web.css")' type='text/css' />
+
+ 
+
 </head>
 <body>
 
-	<div id="top">
-		<div id="logo">
-			<img alt="logo" src="@routes.Assets.at("images/logo.png")" />
+<div id="logo">
+			<img alt="logo" src="@routes.Assets.at("images/logo.png")">
 		</div>
-	</div>
+	
 	<div id="header">
 		<div id="menu">
-			<div class="menuButton menuButtonWidth">GjÃ¸r vi?</div>
+			<div class="menuButton menuButtonWidth">Gjør vi?</div>
 			<div class="menuButton menuButtonWidth">Er vi?</div>
 			<div class="menuButton menuButtonWidth">Jobb</div>
 			<div class="menuButton menuButtonWidth" id="hideMe">Kontakt</div>
 		</div>
 	</div>
-	<div id="news"></div>
-	<div id="fag">
-		<span style="font-size: 30px; font-style: bold;">FAGBLOGG
-			&gt;&gt;</span>
-	</div>
 	
-	<div id="calendar">
+	<h2>CSS3 - Transformation</h2>
 	
-	<div id="transition_boks">
-		<img id="transition" alt="logo" src="@routes.Assets.at("images/firefox.png")" />
+	<fieldset><legend>Endringer ved oppdatering av siden</legend>
+	<div class="boks">
+	    <div id="myanimation"></div>
 	</div>
-	</div>
+	</fieldset>
 	
-	</div>
+	<fieldset><legend>Endringer ved hover</legend>
+
+    <div id="transition">
+	    <div id="firefox" class="rullerende" ><img alt="logo" src="@routes.Assets.at("images/firefox.png")" /></div>
+	     <div id="ease" class="test_box"><p>HALLO</p></div>
+    </div>
+    </fieldset>
 
 
-</body>
-</html>
+
+	
+	<fieldset><legend>Endringer ved klikk i input-boks</legend>
+	<div class="boks">
+		Tekstboksen: <input type="text" id="mytextbox" />
+	</div>
+	</fieldset>
+	
+	
+
+	<h2>HTML5 - Canvas</h2>
+	<fieldset><legend>Boks som kan tegnes i ved hjelp av javascript</legend>
+    <canvas id="myCanvas" class="boks" >
+        Din browser støtter ikke canvas
+    </canvas>
+    </fieldset>
+
+
+
+
+   <script>
+
+ var canvas = document.getElementById("myCanvas");
+      if (canvas.getContext){
+
+        // use getContext to use the canvas for drawing
+        var ctx = canvas.getContext("2d");
+
+        // Draw shapes
+        ctx.beginPath();
+        ctx.arc(75,75,50,0,Math.PI*2,true); 
+        ctx.moveTo(110,75);
+        ctx.arc(75,75,35,0,Math.PI,false);   
+        ctx.moveTo(65,65);
+        ctx.arc(60,65,5,0,Math.PI*2,true); 
+        ctx.moveTo(95,65);
+        ctx.arc(90,65,5,0,Math.PI*2,true);  
+        ctx.stroke();
+        }
+</script> 
+
+
+	 
+</body></html>
+

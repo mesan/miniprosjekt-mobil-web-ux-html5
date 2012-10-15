@@ -75,6 +75,8 @@ html,body {
 	border-left: 1px solid #333333;
 }
 
+
+
 .menuButtonWidth {
 	width: 25%;
 }
@@ -106,32 +108,83 @@ html,body {
 }
 
 
-/*WEB
-/*---------------------------------------------*/
+/*TRANSITION
+/*----Form/Bevegelse---------------------------*/
 
-#transition_boks{
-    position:relative;
-    width:530px;
-    height:530px;
-    margin:0 auto 10px;
-    border:1px #aaa solid;
-    padding:10px;
+.rullerende img
+{
+	width:60px;
+    height:60px;
+}
+.rullerende 
+{
+	position:relative;
+	width:60px;
+    height:60px;
+    margin-bottom: 40px;
 }
 
-    #transition 
-    {
-  	 	-webkit-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-		-moz-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-		-o-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
-		transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+fieldset
+{
+	width:50%;
+	margin: 10px 0;
+}
+
+legend
+{
+	font-variant: small-caps;
+}
+
+#transition,
+.boks{
+    position:relative;
+    width:95%;
+    height:100px;
+    border:1px #aaa solid;
+    padding:10px;
+   
   }
   
+ #transition 
+{
+	height:170px;
+}
 
+.test_box {
+  font-size:12px;
+  position:relative;
+  width:60px;
+  height:60px;
+  margin-bottom:10px;
+  background-color:blue;
+}
+.test_box p
+ {
+  text-align:center;
+  padding-top:4px;
+}
   
-  #transition:hover,
-  #transition_boks.hover_effect 
+ #ease.test_box
   {
-    -webkit-border-radius:30px;
+    -webkit-transition: all 4s ease;
+	-moz-transition: all 4s ease;
+	-o-transition: all 4s ease;
+	transition: all 4s ease;    
+	border:1px #f00 solid;
+  }
+  
+#firefox.rullerende 
+{
+   -webkit-transition: all 2s ease;
+	-moz-transition: all 2s ease;
+	-o-transition: all 2s ease;
+	transition: all 2s none;   
+}
+
+ #transition:hover .test_box, 
+ #transition.hover_effect .test_box
+ {
+    -webkit-border-radius:30px; /*border avrundes*/
     -moz-border-radius:30px;
     border-radius:30px;
     -webkit-transform: rotate(720deg);
@@ -139,6 +192,79 @@ html,body {
 	-o-transform: rotate(720deg);
 	-ms-transform: rotate(720deg);
 	transform: rotate(720deg);    
-	margin-left:420px;
- 	
+	margin-left:85%;
+    background-color:#fff;
   }
+  
+ #transition:hover .rullerende,
+ #transition.hover_effect .rullerende
+ {
+
+    -webkit-transform: rotate(1440deg); /*hvor mange omdreininger*/
+	-moz-transform: rotate(1440deg);
+	-o-transform: rotate(1440deg);
+	-ms-transform: rotate(1440deg);
+	transform: rotate(1440deg);    
+	margin-left:85%;       /*hvor mye flyttes bildet for hver rulling*/
+	/*Denne prosenten må justeres utifra størrelsen på vinduet*/
+  }
+
+  
+ /*----Farge--------------------------*/
+ 
+ 
+#transition:hover,
+.boks:hover
+{
+   background: #690;  
+}
+
+#mytextbox{
+	background:WHITE;
+    -webkit-transition: background 1s ease-out;
+    -moz-transition: background 1s ease-out;
+    -o-transition: background 1s ease-out;
+    transition: background 1s ease-out;
+}
+
+#mytextbox:focus{
+	background:GRAY;
+}
+
+#myanimation{
+   width:100px;
+   height:100px;
+   background:red;
+   animation:myfirst 5s;
+   -moz-animation:myfirst 5s; /* Firefox */
+   -webkit-animation:myfirst 5s; /* Safari and Chrome */
+   -o-animation:myfirst 5s; /* Opera */
+}
+
+@keyframes myfirst
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+
+
+

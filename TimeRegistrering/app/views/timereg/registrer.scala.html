@@ -1,13 +1,16 @@
 @main("Timeregisteret") {
-    <div ng-controller="RegistrerTimerCtrl">
-    	<form>
-    		Ansattnummer <input type="text" name="ansattNr" autofocus required ng-model="ansattNr"/><br />
-    		Dato <input type="date" name="dato" required ng-model="dato"/><br />
-    		Arbeid <input type="text" name="arbeid" required ng-model="arbeid"/><br />
-    		Antall timer <input type="text" name="timer" min="1" max="24" ng-model="timer"/><br />
-    		Overtid <input type="checkbox" name="overtid" required ng-model="overtid"/><br />
-    		Kommentar <textarea name="kommentar" rows="5" cols="40" ng-model="kommentar"></textarea>  		
-    	</form>
-    	<button name="add" ng-click="registrerArbeid()">Registrer timer</button>
-    </div>
+<div ng-controller="TimeregCtrl">
+	<form name="form" >
+ 		Ansattnummer <input type="number" name="ansattnr" ng-model="arbeid.ansattnr" autofocus required/><br />
+ 		Dato <input type="date" name="dato" required ng-model="arbeid.dato"/><br />
+ 		Arbeid <input type="text" name="arbeid" required ng-model="arbeid.arbeid"/><br />
+ 		Antall timer <input type="number" min="1" max="24" name="timer" min="1" max="24" ng-model="arbeid.timer"/><br />
+ 		Overtid <input type="checkbox" name="overtid" ng-model="arbeid.overtid" /><br />
+ 		Kommentar <textarea name="kommentar" rows="5" cols="40" ng-model="arbeid.kommentar"></textarea>
+ 		<button ng-click="leggTilTimereg(arbeid)"
+                ng-disabled="form.$invalid || isUnchanged(arbeid)">Registrer timer</button>
+ 	</form>
+ 	
+ 	<pre>form = {{arbeid | json}}</pre>
+</div>
 }
