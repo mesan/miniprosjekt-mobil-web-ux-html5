@@ -3,27 +3,31 @@
  * 
  */
 (function () {
+	
+	$('#container').on('swipeUp', function(e) {
+		var hash = window.location.hash;
+				
+		if (hash.match(new RegExp('#/timereg/[0-9]+$'))) {
+			$('#handlingsPanel').show();
+		} else if (hash.match(new RegExp('#/timereg'))) {
+			$('#utvalgsPanel').show();
+		}
+	});
+	
+	$('#container').on('swipeDown', function(e) {
+		var hash = window.location.hash;
+				
+		if (hash.match(new RegExp('#/timereg/[0-9]+$'))) {
+			$('#handlingsPanel').hide();
+		} else if (hash.match(new RegExp('#/timereg$'))) {
+			$('#utvalgsPanel').hide();
+		}
+	})
+	
+	$('#tilbakeKnapp').on('tap', function(e) {
+		window.history.back();
 		
-	$('#innhold').on('swipeUp', function() {
-		$('#handlingsPanel').show();
-	});
-	
-	$('#innhold').on('swipeDown', function() {
-		$('#handlingsPanel').hide();
-	});
-	
-	// Sletter et arbeid.
-	$('#slettArbeidKnapp').on('longTap', function() {
-		window.location.href="http://www.db.no";
-	});	
-	
-	$('#redigerArbeidKnapp').on('tap', function() {
-		window.location.href="http://finn.no";
-	});
-	
-	// Går til neste registrerte arbeid.	
-	$('#innhold').on('swipeLeft', function() {
-		window.location.href="http://www.vg.no";
+		e.preventDefault();
 	});
 })();
 

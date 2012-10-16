@@ -1,0 +1,30 @@
+<div id="containerSpacer">
+<h2>Detaljer for arbeid</h2>
+
+<h3>Ansattnummer</h3>
+<p>{{arbeid.ansattNr}}</p>
+
+<h3>Dato</h3>
+<p>{{arbeid.dato | date:'dd/MM/yyyy'}}</p>
+
+<h3>Arbeid</h3>
+<p>{{arbeid.arbeid}}</p>
+
+<h3>Timer</h3>
+<p>{{arbeid.timer}} t</p>
+
+<h3>Overtid</h3>
+<p>{{arbeid.overtid}}</p>
+
+<h3>Kommentar</h3>
+<p>{{arbeid.kommentar}}</p>
+
+<div id="handlingsPanel">
+<div id="handlingsPanelSpacer">
+	<a ng-href="#/timereg/{{arbeid.ansattNr}}/endre" id="endreArbeidKnapp">Endre</a>
+	<a href ng-click="slettArbeid(arbeid.ansattNr)" id="slettArbeidKnapp">Slett</a>
+</div>
+</div>
+</div>
+
+

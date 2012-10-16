@@ -32,7 +32,13 @@ public class Arbeid extends Model {
 
 	public Arbeid(long ansattNr, Date dato, String arbeid, double timer, boolean overtid, String kommentar) {
 		this.ansattNr = ansattNr;
-		this.dato = dato;
+		
+		if (dato == null) {
+			this.dato = new Date();	
+		} else {
+			this.dato = dato;
+		}
+		
 		this.arbeid = arbeid;
 		this.timer = timer;
 		this.overtid = overtid;

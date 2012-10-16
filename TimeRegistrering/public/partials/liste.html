@@ -1,0 +1,33 @@
+<div id="utvalgsPanel">
+	<input ng-model="query" /> <select ng-model="order">
+		<option value="dato">Dato</option>
+		<option value="ansattNr">Ansattnummer</option>
+		<option value="arbeid">Arbeid</option>
+	</select>
+</div>
+
+
+<div id="containerSpacer">
+	<table id="timeregTabell" ng-show="timeregistreringer.length > 0">
+		<tr>
+			<th>Dato</th>
+			<th>Arbeid</th>
+			<th>Timer</th>
+			<th>Valg</th>
+		</tr>
+
+		<tr
+			ng-repeat="timereg in timeregistreringer | filter: query | orderBy: order">
+			<td>{{timereg.dato | date:'dd/MM/yyyy'}}</td>
+			<td><a href="#/timereg/{{timereg.ansattNr}}">{{timereg.arbeid}}</a></td>
+			<td>{{timereg.timer}}</td>
+			<td><a href="#/timereg/{{timereg.ansattNr}}/endre">Endre</a> | <a
+				href ng-click="slettArbeid(timereg.ansattNr)">Slett</a></td>
+		</tr>
+	</table>
+	
+	<h3 ng-show="timeregistreringer == 0">Ingen registrerte timer.</h3>
+	
+	<a ng-href="#/timereg/ny">+ Registrer timer</a>
+</div>
+

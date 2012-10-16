@@ -1,5 +1,8 @@
 package controllers;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 import models.Arbeid;
 
 import org.codehaus.jackson.JsonNode;
@@ -18,25 +21,17 @@ public class TimeReg extends Controller {
 	 * GET: /timereg
 	 */
 	public static Result index() {
-
+		//Arbeid a = new Arbeid(199, new Date(), "Konsulent", 7.5, true, "ingen kommentar");
+		//a.save();
+		
 		if (request().accepts("text/html")) {
-			return ok(views.html.timereg.index.render(Arbeid.find.all()));
-		} else if (request().accepts("application/json")) {
-			return ok(Json.toJson(Arbeid.find.all()));
+			return ok(views.html.timereg.index.render());
+		} else {
+			return ok(Json.toJson(Arbeid.find.all()));	
 		}
-
-		return badRequest();
 	}
 
-	/*
-	 * Registrer arbeid
-	 * 
-	 * GET: /timereg/new
-	 */
-	public static Result newWork() {
-		return ok(views.html.timereg.registrer.render());
-	}
-
+	
 	/*
 	 * Vis arbeid
 	 * 
@@ -46,13 +41,7 @@ public class TimeReg extends Controller {
 
 		Arbeid arbeid = Arbeid.find.byId(id);
 
-		if (request().accepts("text/html")) {
-			return ok(views.html.timereg.vis.render());
-		} else if (request().accepts("application/json")) {
-			return ok(Json.toJson(arbeid));
-		}
-
-		return badRequest();
+		return ok(Json.toJson(arbeid));
 	}
 
 	/*
@@ -64,13 +53,7 @@ public class TimeReg extends Controller {
 
 		Arbeid arbeid = Arbeid.find.byId(id);
 
-		if (request().accepts("text/html")) {
-			return ok(views.html.timereg.vis.render());
-		} else if (request().accepts("application/json")) {
-			return ok(Json.toJson(arbeid));
-		}
-
-		return badRequest();
+		return ok(Json.toJson(arbeid));
 	}
 
 	/*

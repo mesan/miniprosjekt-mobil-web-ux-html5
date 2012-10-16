@@ -1,111 +1,103 @@
-/*
- * Index action. 
- * 
- * GET: /timereg
- */
+'use strict';
+
+/* Controllers */
+
 function TimeregListeCtrl($scope, $http) {
-	
-    $http({method: 'GET', url: '/timereg'}).
-    success(function(data, status, headers, config) {
-    	$scope.registrerteTimer = data;
-    }).
-    error(function(data, status, headers, config) {
-    	alert("Feil i index.");
+    
+    $http({
+        method: 'GET',
+        url: '/timereg'
+    })
+    .success(function(data, status, headers, config) {
+        $scope.timeregistreringer = data;
+    })
+    .error(function(data, status, headers, config) {
+        alert("Feil ved innhenting av timeregistreringer.")
     });
-};
-
-
-/*
- * New action.
- * 
- * POST: /timereg
- */
-function TimeregNyCtrl($scope, $http) {
-			
-	$scope.nyttArbeid = function() {
-		var arbeid = {
-			ansattNr: $scope.ansattNr,
-			dato: $scope.dato,
-			arbeid: $scope.arbeid,
-			timer: $scope.timer,
-			overtid: $scope.overtid,
-			kommentar: $scope.kommentar
-		};
-		
-		$http.post('/timereg', arbeid).
-		success(function(data, status, headers, config) {
-			window.location = '#/timereg';
-		}). 
-		error(function(data, status, headers, config) {
-			alert("Feil i new.");
-		});
-	}
-};
-
-timereg.controller('TimeregCtrl', function TimeregCtrl($scope, timeregStorage) {
-var registrerteTimer = $scope.registrerteTimer = timeregStorage.get();
-	$scope.leggTilTimereg = function(user) {
-		timeregStorage.put(user);
-	};
-});
-
-/*
- * Show action.
- * 
- * GET: /timereg/:id
- */
-function TimeregDetaljeCtrl($scope, $http, $routeParams) {
-	$http.get('/timereg/' + $routeParams.id)
-	.success(function(data, status, headers, config) {
-		$scope.ansattNr = data.ansattNr;
-		$scope.dato = data.dato;
-		$scope.arbeid = data.arbeid;
-		$scope.timer = data.timer;
-		$scope.overtid = data.overtid;
-		$scope.kommentar = data.kommentar;
-	})
-	.error(function(data, status, headers, config) {
-		alert("Feil i delete");
-	});
+     
+    $scope.slettArbeid = function(ansattNr) {
+    	$http({
+    		method: 'DELETE',
+    		url: '/timereg/' + ansattNr    		
+    	})
+    	.success(function(data, status, headers, config) {
+    		window.location.hash = '#/timereg';
+    	})
+    	.error(function(data, status, headers, config) {
+    		alert("Feil ved sletting av timeregistrering.");
+    	});
+    }
+    
+    $scope.order = 'dato';
 }
 
-
-/*
- * Edit action.
- * 
- * GET: /timereg/:id/edit
- */
-function TimeregEndreCtrl($scope, $http, $routeParams) {
-	$http.get('/timereg/' + $routeParams.id + '/edit')
+function TimeregDetaljCtrl($scope, $http, $routeParams) {
+	$http({
+		method: 'GET',
+		url: '/timereg/' + $routeParams.ansattNr
+	})
 	.success(function(data, status, headers, config) {
-		$scope.ansattNr = data.ansattNr;
-		$scope.dato = data.dato;
-		$scope.arbeid = data.arbeid;
-		$scope.timer = data.timer;
-		$scope.overtid = data.overtid;
-		$scope.kommentar = data.kommentar;
+		$scope.arbeid = data;
 	})
 	.error(function(data, status, headers, config) {
-		console.log(data);
-		alert("Feil i edit");
+		alert("Feil ved innehenting av arbeid med id " + $routeParams.ansattNr);
+	});
+	
+	$scope.slettArbeid = function(ansattNr) {
+    	$http({
+    		method: 'DELETE',
+    		url: '/timereg/' + ansattNr    		
+    	})
+    	.success(function(data, status, headers, config) {
+    		window.location.hash = '#/timereg';
+    	})
+    	.error(function(data, status, headers, config) {
+    		alert("Feil ved sletting av timeregistrering.");
+    	});
+    }
+}
+
+function TimeregNyCtrl($scope, $http) {
+	$scope.arbeid = {};
+	
+	$scope.registrerArbeid = function() {
+		$http({
+			method: 'POST',
+			url: '/timereg', 
+			data: $scope.arbeid
+		})
+		.success(function(data, status, headers, config) {
+			window.location.hash = '#/timereg';
+		})
+		.error(function(data, status, headers, config) {
+			alert("Feil ved opprettelse timeregistrering.");
+		});
+	}
+}
+
+function TimeregEndreCtrl($scope, $http, $routeParams) {
+	$http({
+		method: 'GET',
+		url: '/timereg/' + $routeParams.ansattNr + '/edit'
+	})
+	.success(function(data, status, headers, config) {
+		$scope.arbeid = data;
+	})
+	.error(function(data, status, headers, config) {
+		alert("Feil ved innehenting av arbeid med id " + $routeParams.ansattNr);
 	});
 	
 	$scope.oppdaterArbeid = function() {
-		var arbeid = {
-				ansattNr: $scope.ansattNr,
-				dato: $scope.dato,
-				arbeid: $scope.arbeid,
-				timer: $scope.timer,
-				overtid: $scope.overtid,
-				kommentar: $scope.kommentar
-			};
-			
-			$http.put('/timereg/' + $routeParams.id, arbeid).
-			success(function(data, status, headers, config) {
-				window.location = '#/timereg/' + $routeParams.id;
- 			}). 
-			error(function(data, status, headers, config) {
-				alert("Feil");
-			});
+		$http({
+			method: 'PUT',
+			url: '/timereg/' + $routeParams.ansattNr,
+			data: $scope.arbeid
+		})
+		.success(function(data, status, headers, config) {
+			window.location.hash = '#/timereg/' + $routeParams.ansattNr;
+		})
+		.error(function(data, status, headers, config) {
+			alert("Feil ved oppdatering av arbeid med id " + $routeParams.ansattNr);
+		});
 	}
 }
