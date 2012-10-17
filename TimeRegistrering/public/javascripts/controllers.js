@@ -20,9 +20,16 @@ function TimeregListeCtrl($scope, $http) {
     		method: 'DELETE',
     		url: '/timereg/' + id    		
     	})
-    	.success(function(data, status, headers, config) {
-    		// Må loope gjennom liste og fjerne arbeid med dette ansattnummeret.    		
-    		// $scope.timeregistreringer
+    	.success(function(data, status, headers, config) {    		    		    		
+    		for (var i = 0; i < $scope.timeregistreringer.length; i++) {
+    			var timereg = $scope.timeregistreringer[i];
+    			
+    			if (timereg.id == id) {
+    				$scope.timeregistreringer.splice(i, 1);
+    				break;
+    			}
+    		}
+    		
     	})
     	.error(function(data, status, headers, config) {
     		alert("Feil ved sletting av timeregistrering.");
