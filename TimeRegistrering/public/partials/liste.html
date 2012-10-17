@@ -18,11 +18,11 @@
 
 		<tr
 			ng-repeat="timereg in timeregistreringer | filter: query | orderBy: order">
-			<td>{{timereg.dato | date:'dd/MM/yyyy'}}</td>
-			<td><a href="#/timereg/{{timereg.ansattNr}}">{{timereg.arbeid}}</a></td>
+			<td>{{timereg.dato}}</td>
+			<td><a href="#/timereg/{{timereg.id}}">{{timereg.arbeid}}</a></td>
 			<td>{{timereg.timer}}</td>
-			<td><a href="#/timereg/{{timereg.ansattNr}}/endre">Endre</a> | <a
-				href ng-click="slettArbeid(timereg.ansattNr)">Slett</a></td>
+			<td><a href="#/timereg/{{timereg.id}}/endre">Endre</a> | <a
+				href ng-click="slettArbeid(timereg.id)">Slett</a></td>
 		</tr>
 	</table>
 	
@@ -30,4 +30,3 @@
 	
 	<a ng-href="#/timereg/ny">+ Registrer timer</a>
 </div>
-

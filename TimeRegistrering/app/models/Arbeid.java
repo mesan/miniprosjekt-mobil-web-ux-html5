@@ -15,8 +15,9 @@ public class Arbeid extends Model {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public long id;
 	public long ansattNr;
-	public Date dato;
+	public String dato;
 	public String arbeid;
 	public double timer;
 	public boolean overtid;
@@ -30,19 +31,21 @@ public class Arbeid extends Model {
 		this.kommentar = arbeid.getKommentar();
 	}
 
-	public Arbeid(long ansattNr, Date dato, String arbeid, double timer, boolean overtid, String kommentar) {
+	public Arbeid(long ansattNr, String dato, String arbeid, double timer, boolean overtid, String kommentar) {
 		this.ansattNr = ansattNr;
-		
-		if (dato == null) {
-			this.dato = new Date();	
-		} else {
-			this.dato = dato;
-		}
-		
+		this.dato = dato;		
 		this.arbeid = arbeid;
 		this.timer = timer;
 		this.overtid = overtid;
 		this.kommentar = kommentar;
+	}
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public long getAnsattNr() {
@@ -53,11 +56,11 @@ public class Arbeid extends Model {
 		this.ansattNr = ansattNr;
 	}
 
-	public Date getDato() {
+	public String getDato() {
 		return dato;
 	}
 
-	public void setDato(Date dato) {
+	public void setDato(String dato) {
 		this.dato = dato;
 	}
 

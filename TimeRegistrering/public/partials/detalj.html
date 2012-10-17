@@ -2,7 +2,7 @@
 <h2>Detaljer for arbeid</h2>
 
 <h3>Ansattnummer</h3>
-<p>{{arbeid.ansattNr}}</p>
+<p>{{arbeid.id}}</p>
 
 <h3>Dato</h3>
 <p>{{arbeid.dato | date:'dd/MM/yyyy'}}</p>
@@ -21,8 +21,8 @@
 
 <div id="handlingsPanel">
 <div id="handlingsPanelSpacer">
-	<a ng-href="#/timereg/{{arbeid.ansattNr}}/endre" id="endreArbeidKnapp">Endre</a>
-	<a href ng-click="slettArbeid(arbeid.ansattNr)" id="slettArbeidKnapp">Slett</a>
+	<a ng-href="#/timereg/{{arbeid.id}}/endre" id="endreArbeidKnapp">Endre</a>
+	<a href ng-click="slettArbeid(arbeid.id)" id="slettArbeidKnapp">Slett</a>
 </div>
 </div>
 </div>

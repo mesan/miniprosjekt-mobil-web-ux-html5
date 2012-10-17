@@ -15,13 +15,14 @@ function TimeregListeCtrl($scope, $http) {
         alert("Feil ved innhenting av timeregistreringer.")
     });
      
-    $scope.slettArbeid = function(ansattNr) {
+    $scope.slettArbeid = function(id) {
     	$http({
     		method: 'DELETE',
-    		url: '/timereg/' + ansattNr    		
+    		url: '/timereg/' + id    		
     	})
     	.success(function(data, status, headers, config) {
-    		window.location.hash = '#/timereg';
+    		// Må loope gjennom liste og fjerne arbeid med dette ansattnummeret.    		
+    		// $scope.timeregistreringer
     	})
     	.error(function(data, status, headers, config) {
     		alert("Feil ved sletting av timeregistrering.");
@@ -34,19 +35,19 @@ function TimeregListeCtrl($scope, $http) {
 function TimeregDetaljCtrl($scope, $http, $routeParams) {
 	$http({
 		method: 'GET',
-		url: '/timereg/' + $routeParams.ansattNr
+		url: '/timereg/' + $routeParams.id
 	})
 	.success(function(data, status, headers, config) {
 		$scope.arbeid = data;
 	})
 	.error(function(data, status, headers, config) {
-		alert("Feil ved innehenting av arbeid med id " + $routeParams.ansattNr);
+		alert("Feil ved innehenting av arbeid med id " + $routeParams.id);
 	});
 	
-	$scope.slettArbeid = function(ansattNr) {
+	$scope.slettArbeid = function(id) {
     	$http({
     		method: 'DELETE',
-    		url: '/timereg/' + ansattNr    		
+    		url: '/timereg/' + id    		
     	})
     	.success(function(data, status, headers, config) {
     		window.location.hash = '#/timereg';
@@ -78,26 +79,26 @@ function TimeregNyCtrl($scope, $http) {
 function TimeregEndreCtrl($scope, $http, $routeParams) {
 	$http({
 		method: 'GET',
-		url: '/timereg/' + $routeParams.ansattNr + '/edit'
+		url: '/timereg/' + $routeParams.id + '/edit'
 	})
 	.success(function(data, status, headers, config) {
 		$scope.arbeid = data;
 	})
 	.error(function(data, status, headers, config) {
-		alert("Feil ved innehenting av arbeid med id " + $routeParams.ansattNr);
+		alert("Feil ved innehenting av arbeid med id " + $routeParams.id);
 	});
 	
 	$scope.oppdaterArbeid = function() {
 		$http({
 			method: 'PUT',
-			url: '/timereg/' + $routeParams.ansattNr,
+			url: '/timereg/' + $routeParams.id,
 			data: $scope.arbeid
 		})
 		.success(function(data, status, headers, config) {
-			window.location.hash = '#/timereg/' + $routeParams.ansattNr;
+			window.location.hash = '#/timereg/' + $routeParams.id;
 		})
 		.error(function(data, status, headers, config) {
-			alert("Feil ved oppdatering av arbeid med id " + $routeParams.ansattNr);
+			alert("Feil ved oppdatering av arbeid med id " + $routeParams.id);
 		});
 	}
 }

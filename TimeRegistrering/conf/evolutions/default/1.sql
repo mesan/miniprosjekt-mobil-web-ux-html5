@@ -4,13 +4,14 @@
 # --- !Ups
 
 create table arbeid (
-  ansatt_nr                 bigint auto_increment not null,
-  dato                      timestamp,
+  id                        bigint auto_increment not null,
+  ansatt_nr                 bigint,
+  dato                      varchar(255),
   arbeid                    varchar(255),
   timer                     double,
   overtid                   boolean,
   kommentar                 varchar(255),
-  constraint pk_arbeid primary key (ansatt_nr))
+  constraint pk_arbeid primary key (id))
 ;
 
 

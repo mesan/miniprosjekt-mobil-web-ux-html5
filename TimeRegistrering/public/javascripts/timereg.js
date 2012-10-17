@@ -24,7 +24,7 @@
 		}
 	})
 	
-	$('#tilbakeKnapp').on('tap', function(e) {
+	$('#tilbakeKnapp').on('tap click', function(e) {
 		window.history.back();
 		
 		e.preventDefault();
